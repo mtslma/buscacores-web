@@ -1,0 +1,79 @@
+/* src/styles.css */
+@import 'tailwindcss';
+
+@layer base {
+  /* Remove itálicos e define suavização de fonte */
+  * {
+    font-style: normal !important;
+    @apply font-sans antialiased;
+  }
+
+  body {
+    /* bg-slate-50 dá um contraste melhor com os cards brancos */
+    @apply bg-slate-50 text-slate-900 overflow-x-hidden;
+  }
+}
+
+/* Estilização de erro nos inputs */
+.ng-invalid.ng-touched {
+  @apply border-red-500 ring-4 ring-red-50;
+}
+
+/* --- Animações --- */
+
+@layer utilities {
+  /* Toast: Entrada suave com escala */
+  .animate-toast {
+    animation: toast-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Classe para aplicar manualmente se precisar em outros lugares */
+  .fade-in-slide {
+    animation: pageIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Troca de Páginas:
+   Aplicamos apenas ao primeiro elemento após o router-outlet.
+   Isso garante que modais (que geralmente ficam no final do body ou
+   dentro de outros containers) não sofram o slide.
+*/
+main > router-outlet + * {
+  display: block;
+  animation: pageIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) translateX(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Scrollbar mais elegante (opcional, combina com o "talento") */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}

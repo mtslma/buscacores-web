@@ -1,0 +1,36 @@
+@if (service.msg(); as t) {
+  <div class="fixed bottom-8 right-8 z-100 animate-in">
+    <div
+      class="flex items-center gap-4 px-6 py-4 rounded-2xl shadow-2xl min-w-[320px] border-l-4 transition-all duration-300"
+      [ngClass]="{
+        'bg-slate-900 border-pink-500 text-white!': t.type === 'success',
+        'bg-red-600 border-red-800 text-white!': t.type === 'error',
+        'bg-blue-600 border-blue-800 text-white!': t.type === 'info',
+      }"
+    >
+      <lucide-icon
+        [img]="t.type === 'success' ? icons.check : t.type === 'error' ? icons.x : icons.info"
+        [size]="22"
+        class="shrink-0 text-white"
+      ></lucide-icon>
+
+      <div class="flex flex-col">
+        <span
+          class="text-[10px] uppercase font-black tracking-[0.15em] opacity-80 text-white! leading-none mb-1.5"
+        >
+          {{ t.type === 'success' ? 'Sucesso' : t.type === 'error' ? 'Erro' : 'Aviso' }}
+        </span>
+        <span class="text-sm font-bold tracking-tight text-white!">
+          {{ t.message }}
+        </span>
+      </div>
+
+      <button
+        (click)="service.msg.set(null)"
+        class="ml-auto opacity-50 hover:opacity-100 text-white"
+      >
+        <lucide-icon [img]="icons.x" [size]="14"></lucide-icon>
+      </button>
+    </div>
+  </div>
+}
