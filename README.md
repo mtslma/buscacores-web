@@ -1,59 +1,43 @@
-# Buscacores
+# Busca Cores - Projeto Diamante 01
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+O Busca Cores é um site feito para quem precisa de inspiração visual. A ideia é simples: um lugar onde você pode descobrir e salvar paletas de cores de um jeito rápido.
 
-## Development server
+No site, você consegue navegar pelas combinações criadas por outras pessoas ou gerar as suas próprias paletas personalizadas. Além disso, dá para organizar suas coleções favoritas e gerenciar suas criações privadas em um só lugar, facilitando a escolha de cores para qualquer projeto.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Integrantes
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Arthur Thomas Mariano de Souza — RM: 561061
+- Davi Cavalcanti Jorge — RM: 559873
+- Mateus da Silveira Lima — RM: 559728
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Passo a Passo para Iniciar
 
-```bash
-ng generate component component-name
-```
+### 1. Configuração do Frontend (Angular)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Certifique-se de ter o Node.js e o Angular CLI instalados.
 
-```bash
-ng generate --help
-```
+1. Abra o terminal na pasta raiz do frontend.
+2. Instale as dependências:
+   ```
+   npm install
+   ```
+3. Inicie o projeto:
+   ```
+   ng serve
+   ```
+4. Acesse: http://localhost:4200
 
-## Building
+### 2. Configuração do Backend (Spring Boot)
 
-To build the project run:
+Para rodar pelo IntelliJ IDEA:
 
-```bash
-ng build
-```
+1. Certifique-se de que o **Docker Desktop** está aberto e rodando.
+2. Abra o projeto no IntelliJ.
+3. Clique no botão **Run** (ícone de play verde) na classe principal ou na configuração de Spring Boot.
+4. O IntelliJ subirá automaticamente os containers necessários e a aplicação.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
